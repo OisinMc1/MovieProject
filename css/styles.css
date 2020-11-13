@@ -1,51 +1,31 @@
-.item:hover {
-  cursor: pointer;
-  background: #eeeeee;
+#Movies {
+    padding: 10px;
+    padding-left: 20px;
 }
 
-.logo {
-  width: 80px;
-  margin-right: 10px;
-}
+    #Movies input, #Movies button {
+        font-size: 25px;
+        color: #000;
+        margin-bottom: 50px
+    }
 
-.header {
-  height: 50vh;
-  display: grid;
-  place-items: center center;
-}
+    #Movies h4 {
+        margin: 10px 0;
+    }
 
-.white {
-  color: #ffffff;
-}
+    #Movies .imageDiv {
+        text-align: center;
+    }
 
-.is-yellow-btn {
-  background: #f6d500 !important;
-  color: #3e3c31 !important;
-}
+        #Movies .imageDiv img {
+            display: none;
+        }
 
-.pager .button {
-  background: #78909C !important;
-}
-
-.pager .is-secondary {
-  color: #78909C !important;
-  background: transparent !important;
-  border: 2px solid #78909C !important;
-  margin: 2px !important;
-}
-
-.is-font-weight-light {
-    font-weight: 300 !important;
-}
-
-.results .is-badge {
-  font-size: 16px !important;
-  height: 30px !important;
-  padding: 6px !important;
-}
-
-.results,
-.title {
-  text-transform: uppercase;
-}
-
+            #Movies #message .resultDiv .result {
+                width: 600px;
+                min-height: 300px;
+                padding: 6px;
+                float: left;
+                text-align: center;
+                cursor: pointer;
+            }

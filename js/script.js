@@ -39,6 +39,33 @@ $(document).ready(function () {
         return errorMessage;
     }
 
+    $("#message").on("click", ".result", function () {
+        var resourceId = $(this).attr("resourceId");
+        $.ajax({
+            url: "https://api.themoviedb.org/3/movie/" + resourceId + "?language=en-US",
+            data: {
+                api_key: "53e9e51b8f17da47596865a5b4bf906f"
+            },
+            dataType: 'json',
+            success: function (result, status, xhr) {
+                $("#modalTitleH4").html(result["title"]);
+
+                var image = result["poster_path"] == null ? "Image/no-image.png" : "https://image.tmdb.org/t/p/w500/" + result["poster_path"];
+                var overview = result["overview"] == null ? "No information available" : result["overview"];
+
+                var resultHtml = "<p class=\"text-center\"><img src=\"" + image + "\"/></p><p>" + overview + "</p>";
+                resultHtml += "<p>Release Date: " + result["release_date"] + "";
+
+                $("#modalBodyDiv").html(resultHtml)
+
+                $("#myModal").modal("show");
+            },
+            error: function (xhr, status, error) {
+                $("#message").html("Result: " + status + " " + error + " " + xhr.status + " " + xhr.statusText)
+            }
+        });
+    });
+
 
     $(document).ajaxStart(function () {
         $(".imageDiv img").show();
